@@ -18,7 +18,7 @@
                     <div class="tag">
                         <a class="tagmenu" href="">＃フリー</a>
                     </div>
-                    <a href="">
+                    <a href="/posts/create">
                         <div class="contribution">
                             <p>投稿する +</p>
                         </div>
@@ -29,7 +29,9 @@
             <div class='posts'>
                 @foreach($posts as $post)
                     <div class='post'>
-                        <h2 class='title'>{{ $post->title }}</h2>
+                        <h2 class='title'>
+                            <a href="/posts/{{ $post->id }}">{{ $post->title }}</a>
+                        </h2>
                         <p class='body'>{{ $post->free }}</p>
                     </div>
                 @endforeach

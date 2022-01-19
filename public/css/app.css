@@ -11034,3 +11034,10 @@ nav.navbar.navbar-expand-md.navbar-light.bg-white.shadow-sm {
   position: sticky;
   top: 0px;
 }
+
+.theme {
+  text-align: center;
+  color: white;
+  margin: 0px auto;
+  padding-top: 60px;
+}

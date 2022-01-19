@@ -10,9 +10,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', 'PostController@index')->middleware('auth');
+Route::group(['middleware' => 'auth'], function(){
+    Route::get('/', 'PostController@index');
+    Route::get('/posts/create', 'PostController@create');
+    Route::get('/posts/{post}', 'PostController@show');
+    Route::post('/posts', 'PostController@store');
+    Route::get('/posts/{post}/edit', 'PostController@edit');
+    Route::put('/posts/{post}', 'PostController@update');
+    Route::delete('/posts/{post}', 'PostController@delete');
+});
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
