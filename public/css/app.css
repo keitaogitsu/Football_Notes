@@ -4528,7 +4528,7 @@ input[type=button].btn-block {
 }
 
 .navbar {
-  position: sticky;
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -10962,82 +10962,3 @@ a.text-dark:focus {
   }
 }
 
-
-.wrapper > .wrapper > .container {
-  display: flex;
-  justify-content: space-between;
-}
-
-.sidebar {
-  width: 25%;
-  background-color: #98A6B5;
-}
-
-.sidebar_fixed {
-  position: sticky;
-  top: 80px;
-  text-align: center;
-}
-
-.tagtop {
-  font-size: 30px;
-  color: #FFFFFF;
-}
-
-.tag {
-  margin: 15px auto;
-}
-
-.tagmenu {
-  color: #FFFFFF;
-  font-size: 20px;
-}
-
-.contribution {
-  color: #FFFFFF;
-  padding: 1px;
-  margin: 0 30px;
-  border: solid 3px #FFFFFF;
-  border-radius: 10px;
-}
-
-.contribution > p {
-  color: #FFFFFF;
-  margin: 0px;
-  padding: 0px;
-}
-
-.posts {
-  width: 75%;
-  background-color: #F0F8FE;
-}
-
-.post {
-  width: 80%;
-  background-color: #FFFFFF;
-  margin: 0 auto;
-}
-
-.background {
-  background-image: url("../image/field.jpg");
-  background-size: cover;
-  background-position: 50% 40%;
-}
-
-.col-md-8 > .card {
-  opacity: 0.8;
-  position: relative;
-  top: 25%;
-}
-
-nav.navbar.navbar-expand-md.navbar-light.bg-white.shadow-sm {
-  position: sticky;
-  top: 0px;
-}
-
-.theme {
-  text-align: center;
-  color: white;
-  margin: 0px auto;
-  padding-top: 60px;
-}
