@@ -1,99 +1,78 @@
 <template>
     <div class="container">
-        <div class="wrapper">
-            <div class="sidebar">
-                <div class="sidebar_fixed">
-                    <h2 class="tagtop">Tag</h2>
-                    <div class="tag">
-                        <a class="tagmenu" href="">＃目標</a>
-                    </div>
-                    <div class="tag">
-                        <a class="tagmenu" href="">＃練習</a>
-                    </div>
-                    <div class="tag">
-                        <a class="tagmenu" href="">＃試合</a>
-                    </div>
-                    <div class="tag">
-                        <a class="tagmenu" href="">＃フリー</a>
-                    </div>
-                        <div class="contribution">
-                            <template>
-                            <div class="text-center">
-                                {{ dialog }}
-                            <v-dialog
-                              v-model="dialog"
-                              width="500"
-                            >
-                              <template v-slot:activator="{ on, attrs }">
-                                <v-btn
-                                  color="red lighten-2"
-                                  dark
-                                  v-bind="attrs"
-                                  v-on="on"
-                                >
-                                  Click Me
-                                </v-btn>
-                              </template>
-                        
-                              <v-card>
-                                <v-card-title class="text-h5 grey lighten-2">
-                                  Privacy Policy
-                                </v-card-title>
-                        
-                                <v-card-text>
-                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                </v-card-text>
-                        
-                                <v-divider></v-divider>
-                        
-                                <v-card-actions>
-                                  <v-spacer></v-spacer>
-                                  <v-btn
-                                    color="primary"
-                                    text
-                                    @click="dialog = false"
-                                  >
-                                    I accept
-                                  </v-btn>
-                                </v-card-actions>
-                              </v-card>
-                            </v-dialog>
-                          </div>
-                          </template>
-                        </div>
-                    
-                    
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Example Component</div>
-
-                    <div class="card-body">
+        <div class="row">
+            <v-navigation-drawer
+              v-model="drawer"
+              app
+              permanent
+            >
+                <v-sheet
+                  color="grey lighten-4"
+                  class="pa-4"
+                  style="margin-top: 100px;"
+                >
+                    <v-avatar
+                      class="mb-4"
+                      color="grey darken-1"
+                      size="64"
+                    ></v-avatar>
+                    <div>ogitsukeita@gmail.com</div>
+                </v-sheet>
+                
+                <v-divider></v-divider>
+                
+                <v-list>
+                    <v-list-item
+                      v-for="item in items"
+                      :key="item.title"
+                      link
+                    >
+                        <v-list-item-content style="text-align: center;">
+                            <v-list-item-title>{{ item.title }}</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+                    <v-divider></v-divider>
+                    <create-post-dialog></create-post-dialog>
+                </v-list>
+            </v-navigation-drawer>
+               
+            <v-main>
+                <v-container
+                  class="py-8 px-6"
+                  fluid
+                >
+                    <v-row>
                         <post-index></post-index>
-                    </div>
-                </div>
-            </div>
+                    </v-row>
+                </v-container>
+            </v-main>
         </div>
     </div>
 </template>
 
 <script>
-    import postIndex from '../posts/Index'
+    import postIndex from '../posts/Index';
+    import createPostDialog from '../posts/CreatePostDialog';
     export default {
         name: 'Main',
         components: {
-            postIndex
+            postIndex,
+            createPostDialog
         },
         mounted() {
-            console.log('Component mounted.')
+            console.log('Component mounted.');
         },
         data () {
-        return {
-            dialog: false,
-        }
+            return {
+                items: [
+                    { title: '目標' },
+                    { title: '練習' },
+                    { title: '試合' },
+                    { title: 'フリー' },
+                ],
+            }
         },
-    }
+    };
+    
+ 
 </script>

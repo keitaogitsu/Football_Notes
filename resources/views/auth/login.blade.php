@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<body class="background">
+<body class="background" style="background-image: url('{{asset('image/field.jpg')}}')!important; background-size: cover;">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -77,3 +77,6 @@
 </div>
 </body>
 @endsection
+
+
+  

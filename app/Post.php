@@ -12,10 +12,16 @@ class Post extends Model
     protected $fillable = [
         'title',
         'free',
+        'user_id',
         ];
     
     public function getByLimit()
     {
-        return $this->orderBy('updated_at', 'DESC')->get();
+        return $this::with('user')->orderBy('updated_at', 'DESC')->get();
+    }
+    
+    public function user()
+    {
+        return $this->belongsTo('App\User');
     }
 }

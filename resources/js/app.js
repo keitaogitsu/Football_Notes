@@ -25,7 +25,7 @@ Vue.use(VueAxios, axios)
 
 import router from './router.js'
 import Vuetify from 'vuetify'　//追加
-import 'vuetify/dist/vuetify.min.css'
+Vue.use(Vuetify)
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -34,7 +34,8 @@ import 'vuetify/dist/vuetify.min.css'
  */
 
 const app = new Vue({
+    vuetify: new Vuetify(),
     router,
     el: '#app',
-    vuetify: new Vuetify(),
+    
 });
