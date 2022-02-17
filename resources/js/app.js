@@ -24,9 +24,11 @@ import VueAxios from 'vue-axios'
 Vue.use(VueAxios, axios)
 
 import router from './router.js'
-import Vuetify from 'vuetify'　//追加
+import Vuetify from 'vuetify'//追加
+import '@mdi/font/css/materialdesignicons.css'
+import headerComponent from './components/Header'
 Vue.use(Vuetify)
-
+Vue.component('header-component',require('./components/Header.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -36,6 +38,7 @@ Vue.use(Vuetify)
 const app = new Vue({
     vuetify: new Vuetify(),
     router,
+    headerComponent,
     el: '#app',
     
 });

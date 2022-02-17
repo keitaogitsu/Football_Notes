@@ -11,13 +11,7 @@ class PostController extends Controller
     {
         return $post->getByLimit();
     }
-    /**
-     * 特定IDのpostを表示する
-     *
-     * @params Object Post // 引数の$postはid=1のPostインスタンス
-     * @return Reposnse post view
-     */
-    public function show(Post $post)
+     public function show(Post $post)
     {
         return view('posts/show')->with(['post' => $post]);
     }
@@ -29,7 +23,7 @@ class PostController extends Controller
     
     public function store(Request $request, Post $post)
     {
-        $input = $request['post'];
+        $input = $request->input();
         $input += ['user_id' => $request->user()->id];
         $post->fill($input)->save();
         return redirect('/posts/' . $post->id);

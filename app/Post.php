@@ -13,6 +13,13 @@ class Post extends Model
         'title',
         'free',
         'user_id',
+        'idea',
+        'good',
+        'task',
+        'done',
+        'opponent',
+        'my_score',
+        'opponent_score',
         ];
     
     public function getByLimit()

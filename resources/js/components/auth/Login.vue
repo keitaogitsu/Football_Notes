@@ -1,5 +1,7 @@
 <template>
-    <div style="text-align: center; width: 80%; margin: 20% auto 0 auto">
+  <div class="background" style="background-image: url('asset('image/field.jpg')')!important; background-size: cover;">
+    <h3 style="text-align: center; margin: 5% auto">すべてのサッカーノートをここに</h3>
+    <div style="text-align: center; width: 80%; margin: 10% auto 0 auto">
         <h3>ログイン</h3>
         <v-form
           ref="form"
@@ -27,6 +29,7 @@
                 </v-col>
             </v-row>
     </div>
+  </div>
 </template>
 
 
