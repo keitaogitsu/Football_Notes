@@ -2180,8 +2180,18 @@ __webpack_require__.r(__webpack_exports__);
         console.log(_this.posts);
       });
     },
-    updatePost: function updatePost(post) {
-      this.posts += post;
+    createPractice: function createPractice(post) {
+      var _this2 = this;
+
+      console.log(post);
+      axios.post('/posts', post).then(function (res) {
+        _this2.getPosts();
+      })["catch"](function (err) {
+        _this2.$message({
+          type: 'info',
+          message: 'ログイン失敗'
+        });
+      });
     }
   },
   mounted: function mounted() {
@@ -2192,10 +2202,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/posts/Sidebar.vue?vue&type=script&lang=js&":
-/*!************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/posts/Sidebar.vue?vue&type=script&lang=js& ***!
-  \************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/posts/CreateFreeComponent.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/posts/CreateFreeComponent.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2247,9 +2257,665 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'createFreeComponent',
+  data: function data() {
+    return {
+      e1: 1,
+      PostForm: {
+        title: "",
+        free: ""
+      }
+    };
+  },
+  watch: {
+    steps: function steps(val) {
+      if (this.e1 > val) {
+        this.e1 = val;
+      }
+    }
+  },
+  methods: {
+    createPost: function createPost() {
+      this.$emit('create-free', this.PostForm);
+    }
+  },
+  mounted: function mounted() {
+    console.log('Component mounted.');
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/posts/CreateMatchComponent.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/posts/CreateMatchComponent.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'createMatchComponent',
+  data: function data() {
+    return {
+      e1: 1,
+      PostForm: {
+        title: "",
+        free: "",
+        good: "",
+        task: "",
+        opponent: "",
+        my_score: "",
+        opponent_score: ""
+      }
+    };
+  },
+  watch: {
+    steps: function steps(val) {
+      if (this.e1 > val) {
+        this.e1 = val;
+      }
+    }
+  },
+  methods: {
+    createPost: function createPost() {
+      this.$emit('create-match', this.PostForm);
+    }
+  },
+  mounted: function mounted() {
+    console.log('Component mounted.');
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/posts/CreatePostDialog.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/posts/CreatePostDialog.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CreatePracticeComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CreatePracticeComponent */ "./resources/js/components/posts/CreatePracticeComponent.vue");
+/* harmony import */ var _CreateMatchComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CreateMatchComponent */ "./resources/js/components/posts/CreateMatchComponent.vue");
+/* harmony import */ var _CreateFreeComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CreateFreeComponent */ "./resources/js/components/posts/CreateFreeComponent.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'createPostDialog',
+  components: {
+    createPracticeComponent: _CreatePracticeComponent__WEBPACK_IMPORTED_MODULE_0__["default"],
+    createMatchComponent: _CreateMatchComponent__WEBPACK_IMPORTED_MODULE_1__["default"],
+    createFreeComponent: _CreateFreeComponent__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
+  data: function data() {
+    return {
+      dialog: false,
+      e1: 1,
+      cate: {
+        name: '',
+        step: 2
+      },
+      categories: [{
+        name: '練習',
+        step: 4
+      }, {
+        name: '試合',
+        step: 3
+      }, {
+        name: 'フリー',
+        step: 3
+      }]
+    };
+  },
+  watch: {},
+  methods: {
+    createPractice: function createPractice(x) {
+      console.log(x);
+      this.$emit('create-practice', x);
+      this.dialog = false;
+    },
+    postMatch: function postMatch(x) {
+      console.log(x);
+      this.dialog = false;
+    },
+    postFree: function postFree(x) {
+      console.log(x);
+      this.dialog = false;
+    }
+  },
+  mounted: function mounted() {
+    console.log("");
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/posts/CreatePracticeComponent.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/posts/CreatePracticeComponent.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'createPracticeComponent',
+  data: function data() {
+    return {
+      e1: 1,
+      PostForm: {
+        title: "",
+        free: "",
+        good: "",
+        task: "",
+        done: ""
+      }
+    };
+  },
+  watch: {
+    steps: function steps(val) {
+      if (this.e1 > val) {
+        this.e1 = val;
+      }
+    }
+  },
+  methods: {
+    createPost: function createPost() {
+      this.$emit('create-practice', this.PostForm);
+    }
+  },
+  mounted: function mounted() {
+    console.log('Component mounted.');
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/posts/Sidebar.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/posts/Sidebar.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CreatePostDialog__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CreatePostDialog */ "./resources/js/components/posts/CreatePostDialog.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'sidebar',
-  components: {},
+  components: {
+    createPostDialog: _CreatePostDialog__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
   data: function data() {
     return {
       user: "",
@@ -38689,7 +39355,11 @@ var render = function () {
       "div",
       { staticClass: "row" },
       [
-        _c("div", [_c("sidebar")], 1),
+        _c(
+          "div",
+          [_c("sidebar", { on: { "create-practice": _vm.createPractice } })],
+          1
+        ),
         _vm._v(" "),
         _c(
           "v-main",
@@ -38714,7 +39384,9 @@ var render = function () {
                             _vm._v(_vm._s(post.free)),
                           ]),
                           _vm._v(" "),
-                          _c("small", [_vm._v(_vm._s(post.user.name))]),
+                          post.user
+                            ? _c("small", [_vm._v(_vm._s(post.user.name))])
+                            : _vm._e(),
                         ]),
                       ])
                     }),
@@ -38731,6 +39403,1104 @@ var render = function () {
       1
     ),
   ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/posts/CreateFreeComponent.vue?vue&type=template&id=3a9a0884&":
+/*!****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/posts/CreateFreeComponent.vue?vue&type=template&id=3a9a0884& ***!
+  \****************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "v-stepper",
+        {
+          model: {
+            value: _vm.e1,
+            callback: function ($$v) {
+              _vm.e1 = $$v
+            },
+            expression: "e1",
+          },
+        },
+        [
+          _c(
+            "v-stepper-header",
+            [
+              _vm._l(3, function (n) {
+                return [
+                  _c(
+                    "v-stepper-step",
+                    {
+                      key: n + "-cate.step",
+                      attrs: { complete: _vm.e1 > n, step: n, editable: "" },
+                    },
+                    [
+                      _vm._v(
+                        "\n                    Step " +
+                          _vm._s(n) +
+                          "\n                "
+                      ),
+                    ]
+                  ),
+                ]
+              }),
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "v-stepper-items",
+            [
+              _c(
+                "v-stepper-content",
+                { attrs: { step: "1" } },
+                [
+                  _c(
+                    "v-card",
+                    { staticClass: "mb-12", attrs: { height: "100px" } },
+                    [
+                      _c("br"),
+                      _vm._v(" "),
+                      _c("v-text-field", {
+                        attrs: { outlined: "", label: "タイトル" },
+                        model: {
+                          value: _vm.PostForm.title,
+                          callback: function ($$v) {
+                            _vm.$set(_vm.PostForm, "title", $$v)
+                          },
+                          expression: "PostForm.title",
+                        },
+                      }),
+                      _vm._v(
+                        "\n                    " +
+                          _vm._s(_vm.PostForm) +
+                          "\n                "
+                      ),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { color: "primary" },
+                      on: {
+                        click: function ($event) {
+                          _vm.e1 = 2
+                        },
+                      },
+                    },
+                    [_vm._v("\n                    次へ\n                ")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      on: {
+                        click: function ($event) {
+                          _vm.dialog = false
+                        },
+                      },
+                    },
+                    [
+                      _vm._v(
+                        "\n                    キャンセル\n                "
+                      ),
+                    ]
+                  ),
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-stepper-content",
+                { attrs: { step: "2" } },
+                [
+                  _c(
+                    "v-card",
+                    { staticClass: "mb-12", attrs: { height: "400px" } },
+                    [
+                      _c("br"),
+                      _vm._v(" "),
+                      _c("v-textarea", {
+                        attrs: { outlined: "", label: "フリー" },
+                        model: {
+                          value: _vm.PostForm.free,
+                          callback: function ($$v) {
+                            _vm.$set(_vm.PostForm, "free", $$v)
+                          },
+                          expression: "PostForm.free",
+                        },
+                      }),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { color: "primary" },
+                      on: {
+                        click: function ($event) {
+                          _vm.e1 = 3
+                        },
+                      },
+                    },
+                    [_vm._v("\n                    次へ\n                ")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      on: {
+                        click: function ($event) {
+                          _vm.dialog = false
+                        },
+                      },
+                    },
+                    [
+                      _vm._v(
+                        "\n                    キャンセル\n                "
+                      ),
+                    ]
+                  ),
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-stepper-content",
+                { attrs: { step: "3" } },
+                [
+                  _c(
+                    "v-card",
+                    { staticClass: "mb-12", attrs: { height: "400px" } },
+                    [_c("br")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { color: "primary" },
+                      on: {
+                        click: function ($event) {
+                          _vm.e1 = 1
+                        },
+                      },
+                    },
+                    [_vm._v("\n                    前へ\n                ")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      on: {
+                        click: function ($event) {
+                          _vm.dialog = false
+                        },
+                      },
+                    },
+                    [
+                      _vm._v(
+                        "\n                    キャンセル\n                "
+                      ),
+                    ]
+                  ),
+                ],
+                1
+              ),
+            ],
+            1
+          ),
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("v-divider"),
+      _vm._v(" "),
+      _c(
+        "v-card-actions",
+        [
+          _c("v-spacer"),
+          _vm._v(" "),
+          _c(
+            "v-btn",
+            { attrs: { color: "primary" }, on: { click: _vm.createPost } },
+            [_vm._v("\n            投稿する\n        ")]
+          ),
+        ],
+        1
+      ),
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/posts/CreateMatchComponent.vue?vue&type=template&id=4052543b&":
+/*!*****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/posts/CreateMatchComponent.vue?vue&type=template&id=4052543b& ***!
+  \*****************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "v-stepper",
+        {
+          model: {
+            value: _vm.e1,
+            callback: function ($$v) {
+              _vm.e1 = $$v
+            },
+            expression: "e1",
+          },
+        },
+        [
+          _c(
+            "v-stepper-header",
+            [
+              _vm._l(4, function (n) {
+                return [
+                  _c(
+                    "v-stepper-step",
+                    {
+                      key: n + "-cate.step",
+                      attrs: { complete: _vm.e1 > n, step: n, editable: "" },
+                    },
+                    [
+                      _vm._v(
+                        "\n                    Step " +
+                          _vm._s(n) +
+                          "\n                "
+                      ),
+                    ]
+                  ),
+                ]
+              }),
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "v-stepper-items",
+            [
+              _c(
+                "v-stepper-content",
+                { attrs: { step: "1" } },
+                [
+                  _c(
+                    "v-card",
+                    { staticClass: "mb-12", attrs: { height: "400px" } },
+                    [
+                      _c("br"),
+                      _vm._v(" "),
+                      _c("v-text-field", {
+                        attrs: { outlined: "", label: "タイトル" },
+                        model: {
+                          value: _vm.PostForm.title,
+                          callback: function ($$v) {
+                            _vm.$set(_vm.PostForm, "title", $$v)
+                          },
+                          expression: "PostForm.title",
+                        },
+                      }),
+                      _vm._v(" "),
+                      _c("v-text-field", {
+                        attrs: { outlined: "", label: "対戦相手" },
+                        model: {
+                          value: _vm.PostForm.opponent,
+                          callback: function ($$v) {
+                            _vm.$set(_vm.PostForm, "opponent", $$v)
+                          },
+                          expression: "PostForm.opponent",
+                        },
+                      }),
+                      _vm._v(" "),
+                      _c("v-text-field", {
+                        attrs: { outlined: "", label: "自チームのスコア" },
+                        model: {
+                          value: _vm.PostForm.my_score,
+                          callback: function ($$v) {
+                            _vm.$set(_vm.PostForm, "my_score", $$v)
+                          },
+                          expression: "PostForm.my_score",
+                        },
+                      }),
+                      _vm._v(" "),
+                      _c("v-text-field", {
+                        attrs: { outlined: "", label: "相手チームのスコア" },
+                        model: {
+                          value: _vm.PostForm.opponent_score,
+                          callback: function ($$v) {
+                            _vm.$set(_vm.PostForm, "opponent_score", $$v)
+                          },
+                          expression: "PostForm.opponent_score",
+                        },
+                      }),
+                      _vm._v(
+                        "\n                    " +
+                          _vm._s(_vm.PostForm) +
+                          "\n                "
+                      ),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { color: "primary" },
+                      on: {
+                        click: function ($event) {
+                          _vm.e1 = 2
+                        },
+                      },
+                    },
+                    [_vm._v("\n                    次へ\n                ")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      on: {
+                        click: function ($event) {
+                          _vm.dialog = false
+                        },
+                      },
+                    },
+                    [
+                      _vm._v(
+                        "\n                    キャンセル\n                "
+                      ),
+                    ]
+                  ),
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-stepper-content",
+                { attrs: { step: "2" } },
+                [
+                  _c(
+                    "v-card",
+                    { staticClass: "mb-12", attrs: { height: "400px" } },
+                    [
+                      _c("br"),
+                      _vm._v(" "),
+                      _c("v-textarea", {
+                        attrs: { outlined: "", label: "よかったこと" },
+                        model: {
+                          value: _vm.PostForm.good,
+                          callback: function ($$v) {
+                            _vm.$set(_vm.PostForm, "good", $$v)
+                          },
+                          expression: "PostForm.good",
+                        },
+                      }),
+                      _vm._v(" "),
+                      _c("v-textarea", {
+                        attrs: { outlined: "", label: "課題" },
+                        model: {
+                          value: _vm.PostForm.task,
+                          callback: function ($$v) {
+                            _vm.$set(_vm.PostForm, "task", $$v)
+                          },
+                          expression: "PostForm.task",
+                        },
+                      }),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { color: "primary" },
+                      on: {
+                        click: function ($event) {
+                          _vm.e1 = 3
+                        },
+                      },
+                    },
+                    [_vm._v("\n                    次へ\n                ")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      on: {
+                        click: function ($event) {
+                          _vm.dialog = false
+                        },
+                      },
+                    },
+                    [
+                      _vm._v(
+                        "\n                    キャンセル\n                "
+                      ),
+                    ]
+                  ),
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-stepper-content",
+                { attrs: { step: "3" } },
+                [
+                  _c(
+                    "v-card",
+                    { staticClass: "mb-12", attrs: { height: "400px" } },
+                    [
+                      _c("br"),
+                      _vm._v(" "),
+                      _c("v-textarea", {
+                        attrs: { outlined: "", label: "フリー" },
+                        model: {
+                          value: _vm.PostForm.free,
+                          callback: function ($$v) {
+                            _vm.$set(_vm.PostForm, "free", $$v)
+                          },
+                          expression: "PostForm.free",
+                        },
+                      }),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { color: "primary" },
+                      on: {
+                        click: function ($event) {
+                          _vm.e1 = 4
+                        },
+                      },
+                    },
+                    [_vm._v("\n                    次へ\n                ")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      on: {
+                        click: function ($event) {
+                          _vm.dialog = false
+                        },
+                      },
+                    },
+                    [
+                      _vm._v(
+                        "\n                    キャンセル\n                "
+                      ),
+                    ]
+                  ),
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-stepper-content",
+                { attrs: { step: "4" } },
+                [
+                  _c(
+                    "v-card",
+                    { staticClass: "mb-12", attrs: { height: "400px" } },
+                    [_c("br")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { color: "primary" },
+                      on: {
+                        click: function ($event) {
+                          _vm.e1 = 1
+                        },
+                      },
+                    },
+                    [_vm._v("\n                    前へ\n                ")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      on: {
+                        click: function ($event) {
+                          _vm.dialog = false
+                        },
+                      },
+                    },
+                    [
+                      _vm._v(
+                        "\n                    キャンセル\n                "
+                      ),
+                    ]
+                  ),
+                ],
+                1
+              ),
+            ],
+            1
+          ),
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("v-divider"),
+      _vm._v(" "),
+      _c(
+        "v-card-actions",
+        [
+          _c("v-spacer"),
+          _vm._v(" "),
+          _c(
+            "v-btn",
+            { attrs: { color: "primary" }, on: { click: _vm.createPost } },
+            [_vm._v("\n            投稿する\n        ")]
+          ),
+        ],
+        1
+      ),
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/posts/CreatePostDialog.vue?vue&type=template&id=32d9530b&":
+/*!*************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/posts/CreatePostDialog.vue?vue&type=template&id=32d9530b& ***!
+  \*************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "text-center" },
+    [
+      _c(
+        "v-dialog",
+        {
+          attrs: { width: "800" },
+          scopedSlots: _vm._u([
+            {
+              key: "activator",
+              fn: function (ref) {
+                var on = ref.on
+                var attrs = ref.attrs
+                return [
+                  _c(
+                    "v-btn",
+                    _vm._g(
+                      _vm._b(
+                        { attrs: { color: "primary", dark: "" } },
+                        "v-btn",
+                        attrs,
+                        false
+                      ),
+                      on
+                    ),
+                    [_vm._v("\n                投稿する\n            ")]
+                  ),
+                ]
+              },
+            },
+          ]),
+          model: {
+            value: _vm.dialog,
+            callback: function ($$v) {
+              _vm.dialog = $$v
+            },
+            expression: "dialog",
+          },
+        },
+        [
+          _vm._v(" "),
+          _c(
+            "v-card",
+            { staticClass: "mb-4" },
+            [
+              _c(
+                "v-card-text",
+                [
+                  _c("v-select", {
+                    attrs: {
+                      hint: _vm.cate.name + ", " + _vm.cate.step,
+                      items: _vm.categories,
+                      "item-text": "name",
+                      "item-value": "name",
+                      label: "項目",
+                      "persistent-hint": "",
+                      "return-object": "",
+                    },
+                    model: {
+                      value: _vm.cate,
+                      callback: function ($$v) {
+                        _vm.cate = $$v
+                      },
+                      expression: "cate",
+                    },
+                  }),
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _vm.cate && _vm.cate.name == "練習"
+                ? _c(
+                    "div",
+                    [
+                      _c("create-practice-component", {
+                        on: { "create-practice": _vm.createPractice },
+                      }),
+                    ],
+                    1
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.cate && _vm.cate.name == "試合"
+                ? _c(
+                    "div",
+                    [
+                      _c("create-match-component", {
+                        on: { "create-match": _vm.postMatch },
+                      }),
+                    ],
+                    1
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.cate && _vm.cate.name == "フリー"
+                ? _c(
+                    "div",
+                    [
+                      _c("create-free-component", {
+                        on: { "create-free": _vm.postFree },
+                      }),
+                    ],
+                    1
+                  )
+                : _vm._e(),
+            ],
+            1
+          ),
+        ],
+        1
+      ),
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/posts/CreatePracticeComponent.vue?vue&type=template&id=3e341262&":
+/*!********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/posts/CreatePracticeComponent.vue?vue&type=template&id=3e341262& ***!
+  \********************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "v-form",
+        { ref: "form" },
+        [
+          _c(
+            "v-stepper",
+            {
+              model: {
+                value: _vm.e1,
+                callback: function ($$v) {
+                  _vm.e1 = $$v
+                },
+                expression: "e1",
+              },
+            },
+            [
+              _c(
+                "v-stepper-header",
+                [
+                  _vm._l(4, function (n) {
+                    return [
+                      _c(
+                        "v-stepper-step",
+                        {
+                          key: n + "-cate.step",
+                          attrs: {
+                            complete: _vm.e1 > n,
+                            step: n,
+                            editable: "",
+                          },
+                        },
+                        [
+                          _vm._v(
+                            "\n                    Step " +
+                              _vm._s(n) +
+                              "\n                "
+                          ),
+                        ]
+                      ),
+                    ]
+                  }),
+                ],
+                2
+              ),
+              _vm._v(" "),
+              _c(
+                "v-stepper-items",
+                [
+                  _c(
+                    "v-stepper-content",
+                    { attrs: { step: "1" } },
+                    [
+                      _c(
+                        "v-card",
+                        { staticClass: "mb-12", attrs: { height: "400px" } },
+                        [
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("v-text-field", {
+                            attrs: {
+                              outlined: "",
+                              label: "タイトル",
+                              name: "post[title]",
+                            },
+                            model: {
+                              value: _vm.PostForm.title,
+                              callback: function ($$v) {
+                                _vm.$set(_vm.PostForm, "title", $$v)
+                              },
+                              expression: "PostForm.title",
+                            },
+                          }),
+                          _vm._v(" "),
+                          _c("v-textarea", {
+                            attrs: {
+                              outlined: "",
+                              label: "練習内容",
+                              name: "post[done]",
+                            },
+                            model: {
+                              value: _vm.PostForm.done,
+                              callback: function ($$v) {
+                                _vm.$set(_vm.PostForm, "done", $$v)
+                              },
+                              expression: "PostForm.done",
+                            },
+                          }),
+                          _vm._v(
+                            "\n                    " +
+                              _vm._s(_vm.PostForm) +
+                              "\n                "
+                          ),
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { color: "primary" },
+                          on: {
+                            click: function ($event) {
+                              _vm.e1 = 2
+                            },
+                          },
+                        },
+                        [_vm._v("\n                    次へ\n                ")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          on: {
+                            click: function ($event) {
+                              _vm.dialog = false
+                            },
+                          },
+                        },
+                        [
+                          _vm._v(
+                            "\n                    キャンセル\n                "
+                          ),
+                        ]
+                      ),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-stepper-content",
+                    { attrs: { step: "2" } },
+                    [
+                      _c(
+                        "v-card",
+                        { staticClass: "mb-12", attrs: { height: "400px" } },
+                        [
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("v-textarea", {
+                            attrs: {
+                              outlined: "",
+                              label: "よかったこと",
+                              name: "post[good]",
+                            },
+                            model: {
+                              value: _vm.PostForm.good,
+                              callback: function ($$v) {
+                                _vm.$set(_vm.PostForm, "good", $$v)
+                              },
+                              expression: "PostForm.good",
+                            },
+                          }),
+                          _vm._v(" "),
+                          _c("v-textarea", {
+                            attrs: {
+                              outlined: "",
+                              label: "課題",
+                              name: "post[task]",
+                            },
+                            model: {
+                              value: _vm.PostForm.task,
+                              callback: function ($$v) {
+                                _vm.$set(_vm.PostForm, "task", $$v)
+                              },
+                              expression: "PostForm.task",
+                            },
+                          }),
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { color: "primary" },
+                          on: {
+                            click: function ($event) {
+                              _vm.e1 = 3
+                            },
+                          },
+                        },
+                        [_vm._v("\n                    次へ\n                ")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          on: {
+                            click: function ($event) {
+                              _vm.dialog = false
+                            },
+                          },
+                        },
+                        [
+                          _vm._v(
+                            "\n                    キャンセル\n                "
+                          ),
+                        ]
+                      ),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-stepper-content",
+                    { attrs: { step: "3" } },
+                    [
+                      _c(
+                        "v-card",
+                        { staticClass: "mb-12", attrs: { height: "400px" } },
+                        [
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("v-textarea", {
+                            attrs: {
+                              outlined: "",
+                              label: "フリー",
+                              name: "post[free]",
+                            },
+                            model: {
+                              value: _vm.PostForm.free,
+                              callback: function ($$v) {
+                                _vm.$set(_vm.PostForm, "free", $$v)
+                              },
+                              expression: "PostForm.free",
+                            },
+                          }),
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { color: "primary" },
+                          on: {
+                            click: function ($event) {
+                              _vm.e1 = 4
+                            },
+                          },
+                        },
+                        [_vm._v("\n                    次へ\n                ")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          on: {
+                            click: function ($event) {
+                              _vm.dialog = false
+                            },
+                          },
+                        },
+                        [
+                          _vm._v(
+                            "\n                    キャンセル\n                "
+                          ),
+                        ]
+                      ),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-stepper-content",
+                    { attrs: { step: "4" } },
+                    [
+                      _c(
+                        "v-card",
+                        { staticClass: "mb-12", attrs: { height: "400px" } },
+                        [_c("br")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { color: "primary" },
+                          on: {
+                            click: function ($event) {
+                              _vm.e1 = 1
+                            },
+                          },
+                        },
+                        [_vm._v("\n                    前へ\n                ")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          on: {
+                            click: function ($event) {
+                              _vm.dialog = false
+                            },
+                          },
+                        },
+                        [
+                          _vm._v(
+                            "\n                    キャンセル\n                "
+                          ),
+                        ]
+                      ),
+                    ],
+                    1
+                  ),
+                ],
+                1
+              ),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("v-divider"),
+          _vm._v(" "),
+          _c(
+            "v-card-actions",
+            [
+              _c("v-spacer"),
+              _vm._v(" "),
+              _c("input", {
+                attrs: { type: "hidden", name: "json_data", value: "" },
+              }),
+              _vm._v(" "),
+              _c(
+                "v-btn",
+                { attrs: { color: "primary" }, on: { click: _vm.createPost } },
+                [_vm._v("\n            投稿する\n        ")]
+              ),
+            ],
+            1
+          ),
+        ],
+        1
+      ),
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -38820,7 +40590,7 @@ var render = function () {
               _c("v-divider"),
               _vm._v(" "),
               _c("create-post-dialog", {
-                on: { updatePost: _vm.$listners["parentFunc"] },
+                on: { "create-practice": _vm.$listeners["create-practice"] },
               }),
             ],
             2
@@ -100847,6 +102617,282 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Main_vue_vue_type_template_id_17dc542c___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Main_vue_vue_type_template_id_17dc542c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/posts/CreateFreeComponent.vue":
+/*!***************************************************************!*\
+  !*** ./resources/js/components/posts/CreateFreeComponent.vue ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CreateFreeComponent_vue_vue_type_template_id_3a9a0884___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CreateFreeComponent.vue?vue&type=template&id=3a9a0884& */ "./resources/js/components/posts/CreateFreeComponent.vue?vue&type=template&id=3a9a0884&");
+/* harmony import */ var _CreateFreeComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CreateFreeComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/posts/CreateFreeComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _CreateFreeComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CreateFreeComponent_vue_vue_type_template_id_3a9a0884___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CreateFreeComponent_vue_vue_type_template_id_3a9a0884___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/posts/CreateFreeComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/posts/CreateFreeComponent.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/components/posts/CreateFreeComponent.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateFreeComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./CreateFreeComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/posts/CreateFreeComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateFreeComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/posts/CreateFreeComponent.vue?vue&type=template&id=3a9a0884&":
+/*!**********************************************************************************************!*\
+  !*** ./resources/js/components/posts/CreateFreeComponent.vue?vue&type=template&id=3a9a0884& ***!
+  \**********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateFreeComponent_vue_vue_type_template_id_3a9a0884___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./CreateFreeComponent.vue?vue&type=template&id=3a9a0884& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/posts/CreateFreeComponent.vue?vue&type=template&id=3a9a0884&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateFreeComponent_vue_vue_type_template_id_3a9a0884___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateFreeComponent_vue_vue_type_template_id_3a9a0884___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/posts/CreateMatchComponent.vue":
+/*!****************************************************************!*\
+  !*** ./resources/js/components/posts/CreateMatchComponent.vue ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CreateMatchComponent_vue_vue_type_template_id_4052543b___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CreateMatchComponent.vue?vue&type=template&id=4052543b& */ "./resources/js/components/posts/CreateMatchComponent.vue?vue&type=template&id=4052543b&");
+/* harmony import */ var _CreateMatchComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CreateMatchComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/posts/CreateMatchComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _CreateMatchComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CreateMatchComponent_vue_vue_type_template_id_4052543b___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CreateMatchComponent_vue_vue_type_template_id_4052543b___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/posts/CreateMatchComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/posts/CreateMatchComponent.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************!*\
+  !*** ./resources/js/components/posts/CreateMatchComponent.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateMatchComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./CreateMatchComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/posts/CreateMatchComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateMatchComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/posts/CreateMatchComponent.vue?vue&type=template&id=4052543b&":
+/*!***********************************************************************************************!*\
+  !*** ./resources/js/components/posts/CreateMatchComponent.vue?vue&type=template&id=4052543b& ***!
+  \***********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateMatchComponent_vue_vue_type_template_id_4052543b___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./CreateMatchComponent.vue?vue&type=template&id=4052543b& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/posts/CreateMatchComponent.vue?vue&type=template&id=4052543b&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateMatchComponent_vue_vue_type_template_id_4052543b___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateMatchComponent_vue_vue_type_template_id_4052543b___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/posts/CreatePostDialog.vue":
+/*!************************************************************!*\
+  !*** ./resources/js/components/posts/CreatePostDialog.vue ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CreatePostDialog_vue_vue_type_template_id_32d9530b___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CreatePostDialog.vue?vue&type=template&id=32d9530b& */ "./resources/js/components/posts/CreatePostDialog.vue?vue&type=template&id=32d9530b&");
+/* harmony import */ var _CreatePostDialog_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CreatePostDialog.vue?vue&type=script&lang=js& */ "./resources/js/components/posts/CreatePostDialog.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _CreatePostDialog_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CreatePostDialog_vue_vue_type_template_id_32d9530b___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CreatePostDialog_vue_vue_type_template_id_32d9530b___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/posts/CreatePostDialog.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/posts/CreatePostDialog.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************!*\
+  !*** ./resources/js/components/posts/CreatePostDialog.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CreatePostDialog_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./CreatePostDialog.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/posts/CreatePostDialog.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CreatePostDialog_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/posts/CreatePostDialog.vue?vue&type=template&id=32d9530b&":
+/*!*******************************************************************************************!*\
+  !*** ./resources/js/components/posts/CreatePostDialog.vue?vue&type=template&id=32d9530b& ***!
+  \*******************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CreatePostDialog_vue_vue_type_template_id_32d9530b___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./CreatePostDialog.vue?vue&type=template&id=32d9530b& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/posts/CreatePostDialog.vue?vue&type=template&id=32d9530b&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CreatePostDialog_vue_vue_type_template_id_32d9530b___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CreatePostDialog_vue_vue_type_template_id_32d9530b___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/posts/CreatePracticeComponent.vue":
+/*!*******************************************************************!*\
+  !*** ./resources/js/components/posts/CreatePracticeComponent.vue ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CreatePracticeComponent_vue_vue_type_template_id_3e341262___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CreatePracticeComponent.vue?vue&type=template&id=3e341262& */ "./resources/js/components/posts/CreatePracticeComponent.vue?vue&type=template&id=3e341262&");
+/* harmony import */ var _CreatePracticeComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CreatePracticeComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/posts/CreatePracticeComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _CreatePracticeComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CreatePracticeComponent_vue_vue_type_template_id_3e341262___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CreatePracticeComponent_vue_vue_type_template_id_3e341262___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/posts/CreatePracticeComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/posts/CreatePracticeComponent.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************!*\
+  !*** ./resources/js/components/posts/CreatePracticeComponent.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CreatePracticeComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./CreatePracticeComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/posts/CreatePracticeComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CreatePracticeComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/posts/CreatePracticeComponent.vue?vue&type=template&id=3e341262&":
+/*!**************************************************************************************************!*\
+  !*** ./resources/js/components/posts/CreatePracticeComponent.vue?vue&type=template&id=3e341262& ***!
+  \**************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CreatePracticeComponent_vue_vue_type_template_id_3e341262___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./CreatePracticeComponent.vue?vue&type=template&id=3e341262& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/posts/CreatePracticeComponent.vue?vue&type=template&id=3e341262&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CreatePracticeComponent_vue_vue_type_template_id_3e341262___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CreatePracticeComponent_vue_vue_type_template_id_3e341262___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

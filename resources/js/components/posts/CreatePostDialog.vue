@@ -33,7 +33,7 @@
                 
                 <div v-if="cate && cate.name=='練習'">
                     <create-practice-component
-                      @create-practice="postPractice"
+                      @create-practice="createPractice"
                     ></create-practice-component>
                 </div>
                 
@@ -81,21 +81,9 @@
             
         },
         methods: {
-           postPractice(x) {
+           createPractice(x) {
                 console.log(x);
-                this.$emit('updatePost',x);
-                axios.post('/posts',x)
-                 .then((res) => {
-                    this.$router.push({
-                        path: '/'
-                    });   
-                })
-                .catch((err) => {
-                    this.$message({
-                    type: 'info',
-                    message: 'ログイン失敗'
-                    })
-                })
+                this.$emit('create-practice',x);
                this.dialog = false;
            },
            postMatch(x) {
