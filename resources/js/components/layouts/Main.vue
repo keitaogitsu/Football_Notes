@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div>
-                <sidebar @parentFunc="updatePost"></sidebar>
+                <sidebar @create-practice="createPractice"></sidebar>
             </div>
             <v-main>
                 <v-container
@@ -17,7 +17,7 @@
                                         <a :href="'/posts/'+post.id ">{{ post.title }}</a>
                                     </h2>
                                     <p class='body'>{{ post.free }}</p>
-                                    <small>{{ post.user.name }}</small>
+                                    <small v-if="post.user">{{ post.user.name }}</small>
                                 </div>
                             </div>
                         </div>
@@ -48,8 +48,19 @@
                         console.log(this.posts)
                     })
             },
-            updatePost(post) {
-                this.posts += post
+            createPractice(post) {
+                console.log(post)
+                 axios.post('/posts',post)
+                 .then((res) => {
+                    this.getPosts()  
+                })
+                .catch((err) => {
+                    this.$message({
+                    type: 'info',
+                    message: 'ログイン失敗'
+                    })
+                })
+                
             }
         },
         

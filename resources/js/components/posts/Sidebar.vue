@@ -37,7 +37,7 @@
                     </v-list-item-content>
                 </v-list-item>
                 <v-divider></v-divider>
-                <create-post-dialog @updatePost="$listners['parentFunc']"></create-post-dialog>
+                <create-post-dialog @create-practice="$listeners['create-practice']"></create-post-dialog>
                 
             </v-list-item-group>
         </v-list>
@@ -45,10 +45,11 @@
 </template>
 
 <script>
+    import createPostDialog from './CreatePostDialog'
     export default {
         name: 'sidebar',
         components: {
-            
+            createPostDialog,
         },
         data () {
             return {
