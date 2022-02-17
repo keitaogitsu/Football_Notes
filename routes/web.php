@@ -11,6 +11,27 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+
+Auth::routes();
+
+Route::get('/user', function () {
+    return auth()->user();
 });
+
+Route::group(['middleware' => 'auth'], function(){
+    Route::get('/posts', 'PostController@index');
+    Route::get('/posts/create', 'PostController@create');
+    Route::get('/posts/{post}', 'PostController@show');
+    Route::post('/posts', 'PostController@store');
+    Route::get('/posts/{post}/edit', 'PostController@edit');
+    Route::put('/posts/{post}', 'PostController@update');
+    Route::delete('/posts/{post}', 'PostController@delete');
+    Route::get('/{any}', function(){
+        return view('layouts/app');
+    })->where('any', '.*');
+
+});
+
+
+
